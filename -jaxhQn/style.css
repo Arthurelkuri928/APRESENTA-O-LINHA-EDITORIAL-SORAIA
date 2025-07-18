@@ -1,0 +1,229 @@
+/* General Styles */
+:root {
+    --primary-color: #0d2c54; /* Navy Blue */
+    --secondary-color: #f0f2f5; /* Light Gray Background */
+    --text-color: #333333; /* Dark Gray Text */
+    --border-color: #dee2e6; /* Light Gray Border */
+    --white-color: #ffffff;
+    --accent-color: #1a759f; /* Lighter Blue for links */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.report-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+/* Header & Typography */
+.cover-page {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 3rem 0;
+}
+
+/* Summary / Table of Contents */
+.summary-nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.summary-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.summary-nav a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.summary-nav a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.summary-nav .submenu {
+    padding-left: 20px;
+    margin-top: 0.5rem;
+    list-style-type: '–  ';
+}
+
+.summary-nav .submenu a {
+    font-weight: 400;
+}
+
+
+/* Table Styles */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+thead th {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+td:first-child {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+
+/* Story Section Styles */
+.subsection {
+    margin-top: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.pillar-tag {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: var(--white-color);
+        color: #000;
+    }
+
+    .report-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        border-radius: 0;
+    }
+    
+    html, body {
+        width: 210mm;
+        height: 297mm;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #000 !important;
+    }
+
+    .section-divider {
+        display: none;
+    }
+
+    .report-section, .subsection {
+        page-break-inside: avoid;
+    }
+    
+    table, tr, td, th {
+        page-break-inside: avoid;
+    }
+
+    tbody tr:nth-of-type(even) {
+        background-color: #f2f2f2;
+    }
+
+    thead th {
+        background-color: #ddd !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+}
